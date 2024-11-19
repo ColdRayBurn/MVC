@@ -1,0 +1,51 @@
+AuthType Basic
+AuthName "Thats protected Area!"
+AuthUserFile /home/bitrix/www/.htpasswd
+Require valid-user
+
+Options -Indexes
+ErrorDocument 404 /404.php
+
+<IfModule mod_php5.c>
+  php_flag allow_call_time_pass_reference 1
+  php_flag session.use_trans_sid off
+
+  #php_value display_errors 1
+
+  #php_value mbstring.internal_encoding UTF-8
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  Options +FollowSymLinks
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  RewriteCond %{REQUEST_FILENAME} !/bitrix/routing_index.php$
+  RewriteRule ^(.*)$ /bitrix/routing_index.php [L]
+  RewriteEngine On
+  RewriteCond %{REQUEST_URI} ^/$
+  RewriteRule ^(.*)$ /index.php [L]
+  RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+    # Если это не файл с расширением
+            RewriteCond %{REQUEST_URI} !.*\.[a-zA-Z0-9]{2,4}$ [NC]
+            # Если URL не заканчивается на /
+            RewriteCond %{REQUEST_URI} !(.*)/$
+            # Проверяем, что GET-параметров нет
+            RewriteCond %{QUERY_STRING} ^$
+            # Редирект с добавлением слэша
+            RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1/ [R=301,L]
+
+</IfModule>
+
+
+<IfModule mod_dir.c>
+  DirectoryIndex index.php index.html
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive on
+  ExpiresByType image/jpeg "access plus 3 day"
+  ExpiresByType image/gif "access plus 3 day"
+</IfModule>
