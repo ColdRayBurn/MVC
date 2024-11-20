@@ -8,6 +8,7 @@ CModule::AddAutoloadClasses(
         'Activitar\\Helper' => '/local/php_interface/classes/Helper.php',
         'Activitar\\Errors' => '/local/php_interface/classes/Errors.php',
         'Activitar\\RouteHelper' => '/local/php_interface/classes/RouteHelper.php',
+        'Activitar\\IblockHelper' => '/local/php_interface/classes/IblockHelper.php',
         'Activitar\\Exceptions\\NonCriticalException' => '/local/php_interface/classes/exceptions/NonCriticalException.php',
 
         //ROUTESS

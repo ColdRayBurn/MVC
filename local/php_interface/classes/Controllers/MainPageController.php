@@ -17,10 +17,10 @@ class MainPageController extends MainService
     protected function getMetaAction(): void
     {
         $this->executeApi();
+
         $this->sendDataToView(
-            ['data' => ['ELEMENT1', 'ELEMENT2', 'ELEMENT3', 'ELEMENT4', 'ELEMENT5', 'ELEMENT7',],
-            ]
-            , []
+            ['data' => $this->getData()],
+            ['params' => 'params1']
         );
     }
 
