@@ -7,12 +7,6 @@ class ViewData
     private array $result = [];
     private array $params = [];
 
-
-    /**
-     * цвет меню не прозрачный
-     */
-    const EXCLUSIVE_COLOR_MENU = "exclusive_color";
-
     /**
      * // свойства старницы
      */

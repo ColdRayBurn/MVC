@@ -98,20 +98,4 @@ trait ApiCore
         $viewData->setParams($params);
         $viewData->setPageProperties($pageProperties);
     }
-
-    protected function setResponse(JsonResponse $data): string
-    {
-        try {
-            http_response_code($data->httpCode);
-            return json_encode($data, JSON_THROW_ON_ERROR . JSON_UNESCAPED_UNICODE);
-        } catch (JsonException $e) {
-            http_response_code(JsonResponse::HTTP_CODE_BAD_REQUEST);
-            $res = new JsonResponse(
-                httpCode: JsonResponse::HTTP_CODE_BAD_REQUEST,
-                errorMessage: $e->getMessage(),
-                data: ["message" => "Ошибка обработки json: ".$e->getMessage()]
-            );
-            return json_encode( $res, JSON_THROW_ON_ERROR . JSON_UNESCAPED_UNICODE);
-        }
-    }
 }
