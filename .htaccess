@@ -11,14 +11,20 @@ ErrorDocument 404 /404.php
 </IfModule>
 
 <IfModule mod_rewrite.c>
-	Options +FollowSymLinks
-	RewriteEngine On
-	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteCond %{REQUEST_FILENAME} !-l
-	RewriteCond %{REQUEST_FILENAME} !-d
-	RewriteCond %{REQUEST_FILENAME} !/bitrix/urlrewrite.php$
-	RewriteRule ^(.*)$ /bitrix/urlrewrite.php [L]
-	RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+  Options +FollowSymLinks
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  RewriteCond %{REQUEST_FILENAME} !/bitrix/routing_index.php$
+  RewriteRule ^(.*)$ /bitrix/routing_index.php [L]
+  RewriteEngine On
+  RewriteCond %{REQUEST_URI} ^/$
+  RewriteRule ^(.*)$ /index.php [L]
+
+  RewriteRule .* - [E=REMOTE_USER:%{HTTP:Authorization}]
+
 </IfModule>
 
 <IfModule mod_dir.c>

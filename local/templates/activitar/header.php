@@ -47,7 +47,7 @@ if ($USER->IsAdmin()) {
 <header class="header-section">
     <div class="container-fluid">
         <div class="logo">
-            <a href="./index.html">
+            <a href="/">
                 <img src="<?= SITE_TEMPLATE_PATH ?>/img/logo.png" alt="">
             </a>
         </div>
@@ -62,17 +62,17 @@ if ($USER->IsAdmin()) {
             <div class="nav-menu">
                 <nav class="mainmenu mobile-menu">
                     <ul>
-                        <li class="active"><a href="./index.html">Home</a></li>
-                        <li><a href="./about-us.html">About us</a></li>
-                        <li><a href="./schedule.html">Schedule</a></li>
-                        <li><a href="./gallery.html">Gallery</a></li>
-                        <li><a href="./blog.html">Blog</a>
+                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="/about/">About us</a></li>
+                        <li><a href="/schedule/">Schedule</a></li>
+                        <li><a href="/gallery/">Gallery</a></li>
+                        <li><a href="/blog/">Blog</a>
                             <ul class="dropdown">
-                                <li><a href="./about-us.html">About Us</a></li>
-                                <li><a href="./blog-single.html">Blog Details</a></li>
+                                <li><a href="/about-us/">About Us</a></li>
+                                <li><a href="/blog-single/">Blog Details</a></li>
                             </ul>
                         </li>
-                        <li><a href="./contact.html">Contacts</a></li>
+                        <li><a href="/contact/">Contacts</a></li>
                     </ul>
                 </nav>
             </div>

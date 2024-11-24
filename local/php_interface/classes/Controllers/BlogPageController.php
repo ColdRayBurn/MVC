@@ -3,9 +3,10 @@
 namespace Activitar\Controllers;
 
 use Activitar\ApiCore;
-use Activitar\Services\MainService;
+use Activitar\Services\BlogService;
 
-class MainPageController extends MainService
+
+class BlogPageController extends BlogService
 {
     use ApiCore;
 

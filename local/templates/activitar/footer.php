@@ -4,7 +4,7 @@
             <div class="col-lg-3">
                 <div class="footer-logo-item">
                     <div class="f-logo">
-                        <a href="#"><img src="<?= SITE_TEMPLATE_PATH ?>/img/logo.png" alt=""></a>
+                        <a href="/"><img src="<?= SITE_TEMPLATE_PATH ?>/img/logo.png" alt=""></a>
                     </div>
                     <p>Despite growth of the Internet over the past seven years, the use of toll-free phone numbers
                         in television advertising continues.</p>

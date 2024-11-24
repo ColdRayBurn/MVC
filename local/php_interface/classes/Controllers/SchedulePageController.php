@@ -3,9 +3,10 @@
 namespace Activitar\Controllers;
 
 use Activitar\ApiCore;
-use Activitar\Services\MainService;
+use Activitar\Services\ScheduleService;
 
-class MainPageController extends MainService
+
+class SchedulePageController extends ScheduleService
 {
     use ApiCore;
 

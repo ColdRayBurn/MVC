@@ -3,9 +3,9 @@
 namespace Activitar\Controllers;
 
 use Activitar\ApiCore;
-use Activitar\Services\MainService;
+use Activitar\Services\ContactService;
 
-class MainPageController extends MainService
+class ContactPageController extends ContactService
 {
     use ApiCore;
 

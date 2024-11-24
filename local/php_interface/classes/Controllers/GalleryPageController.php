@@ -3,9 +3,10 @@
 namespace Activitar\Controllers;
 
 use Activitar\ApiCore;
-use Activitar\Services\MainService;
+use Activitar\Services\GalleryService;
 
-class MainPageController extends MainService
+
+class GalleryPageController extends GalleryService
 {
     use ApiCore;
 
